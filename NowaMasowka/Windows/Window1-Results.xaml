@@ -1,0 +1,36 @@
+﻿<Window x:Class="NowaMasowka.Windows.Window1_Results"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NowaMasowka.Windows"
+        mc:Ignorable="d"
+        Title="Podglad rekordow" Height="550" Width="800" Closing="Window_Closing" Background="LightSteelBlue" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.07*"/>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.85*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="Window1SaveFilesButton" Content="Zapisz jako pliki .txt na Dysku C - Folder LSMW" Margin="5,2,5,2" Click="Window1SaveFilesButton_Click" />
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.2*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="LabelNewRecord"       Grid.Column="0" MouseDown="LabelNewRecord_MouseDown"       Content="NOWE REKORDY"          Style="{StaticResource LabelStyle}" FontSize="18"/>
+            <Label x:Name="LabelNewExistRecord" Grid.Column="1" MouseDown="LabelNewExistRecord_MouseDown" Content="ISTNIEJACE REKORDY"    Style="{StaticResource LabelStyle}" FontSize="18"/>
+            <Label x:Name="LabelNewSource"        Grid.Column="2" MouseDown="LabelNewSource_MouseDown"        Content="NOWE ZRODLA"           Style="{StaticResource LabelStyle}" FontSize="18"/>
+            <Label x:Name="LabelDeleteSource"     Grid.Column="3" MouseDown="LabelDeleteSource_MouseDown"     Content="ISTNIEJACE ZRODLA"     Style="{StaticResource LabelStyle}" FontSize="18"/>
+
+            <CheckBox x:Name="WithDouble" VerticalAlignment="Bottom" Margin="5,0,0,5" IsChecked="True" Checked="WithDouble_Checked" Unchecked="WithDouble_Unchecked" Grid.Column="2"/>
+            <Label Content="Czy dodawac jak rekord istnieje" VerticalAlignment="Bottom" Margin="20,0,0,1" Grid.Column="2"/>
+        </Grid>
+
+
+        <Frame x:Name="Window1Frame" Grid.Row="2" Margin="5" NavigationUIVisibility="Hidden" Background="Transparent"/>
+
+    </Grid>
+</Window>

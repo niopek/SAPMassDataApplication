@@ -1,0 +1,47 @@
+﻿<Window x:Class="NowaMasowka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NowaMasowka"
+        mc:Ignorable="d"
+        Title="SAP Masowka App" Height="800" Width="600" Background="LightSteelBlue" FontFamily="Helvetica" WindowStartupLocation="CenterScreen">
+<Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="50"/>
+        <RowDefinition Height="60"/>
+        <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="DATA OD" Grid.Column="0" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TextBoxDateFrom" Width="150" Height="30" VerticalAlignment="Center" Grid.Column="0"/>
+        <Label Content="DATA DO" Grid.Column="1" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TextBoxDateTo" Width="150" Height="30" VerticalAlignment="Center" Grid.Column="1"/>
+
+    </Grid>
+    <Grid Grid.Row="1" Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="MainWindowLabel"                 Width="100"     Height="30"  FontSize="20"  Content="INDEKSY"   Grid.Column="0"     MouseDown="MainWindowLabel1_MouseDown"  Style="{StaticResource LabelStyle}"   />
+        <Label x:Name="MainWindowLabel2"                Width="90"      Height="30"  FontSize="20"  Content="CENNIK"    Grid.Column="1"     MouseDown="MainWindowLabel2_MouseDown"  Style="{StaticResource LabelStyle}" />
+        <Label x:Name="MainWindowLabel3"                Width="110"     Height="30"  FontSize="20"  Content="REKORDY"   Grid.Column="2"     MouseDown="MainWindowLabel3_MouseDown"  Style="{StaticResource LabelStyle}"     />
+        <Label x:Name="MainWindowLabel4"                Width="100"     Height="30"  FontSize="20"  Content="ŹRÓDŁA"    Grid.Column="3"     MouseDown="MainWindowLabel4_MouseDown"  Style="{StaticResource LabelStyle}"   />
+        <Button x:Name="FillButton" Content="WGRAJ" FontSize="20" Click="FillButton_Click" Grid.Column="4" BorderBrush="Black" BorderThickness="2" />
+
+    </Grid>
+    <Frame x:Name="MainDisplay" Grid.Row="2" Margin="5" NavigationUIVisibility="Hidden" Background="Transparent" BorderBrush="Black" BorderThickness="1.5">
+
+    </Frame>
+
+</Grid>
+</Window>

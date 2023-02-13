@@ -1,0 +1,34 @@
+﻿<Page x:Class="NowaMasowka.Pages.MainWindowPages.Page2_Pricelist"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NowaMasowka.Pages.MainWindowPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="685" d:DesignWidth="440"
+      Title="StronaCennik">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="ZAŁADUJ CENNIK" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17" FontWeight="Bold" />
+            <Label Content="KOLUMNA PLATFORMA OPCJONALNIE" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17" FontWeight="Bold" />
+        </StackPanel>
+        <Button Width="80" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,5,5" Content="Wyczyść" x:Name="Page2ClearButton" Click="Page2ClearButton_Click" />
+        <DataGrid x:Name="Page2DataGrid" Grid.Row="1" Style="{StaticResource DataGridStyle}" ItemsSource="{Binding}" KeyDown="Page2DataGrid_KeyDown" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Indeks" Width="90*" Binding="{Binding Indeks}"/>
+                <DataGridTextColumn Header="Dostawca" Width="90*" Binding="{Binding Supplier}"/>
+                <DataGridTextColumn Header="Cena" Width="70*" Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="Waluta" Width="60*" Binding="{Binding Currency}"/>
+                <DataGridTextColumn Header="CD" Width="30*" Binding="{Binding DeliveryTime}"/>
+                <DataGridTextColumn Header="PLAT" Width="60*" Binding="{Binding PlatformNumber}"/>
+                <DataGridTextColumn Header="Jm" Width="30*" Binding="{Binding UnitOfMeasure}"/>
+                <DataGridTextColumn Header="KP" Width="30*" Binding="{Binding CountryOfOrigin}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
